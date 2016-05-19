@@ -23,21 +23,21 @@ SQL is as easy as Excel, but it is more flexible in working with multiple databa
 #<a name="crud">CRUD</a>
 ----
 
-# CREATE A TABLE
+## CREATE A TABLE
 
-If you try to create a table with an empty parenthesis.
+If you try to create a table with an empty parenthesis such as:
 
 ```sql
 create table emplyee()
 ```
 
-You will get an error says:
+You will get an error that says:
 
 ```
 in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 1.
 ```
 
-To create a table "employee", you should have an argument in the parenthesis and should look like:
+To correctly create a table you should have an argument in the parenthesis and should look like:
 
 ```sql
 create table employee(id integer primary key, name text, age integer);
@@ -48,7 +48,9 @@ create table employee(id integer primary key, name text, age integer);
 > id  name  age
 
 
-# INSERT ELEMENTS
+## INSERT ELEMENTS
+
+To insert elements into a table:
 
 ```sql
 insert into employee values(1, "Sam", 27);
@@ -59,13 +61,15 @@ insert into employee values(5, "Darren", 30);
 insert into employee values(6, "Hassan", 45);
 ```
 
-# SELECT: READ FROM A TABLE
+## SELECT: READ FROM A TABLE
 
-Returns all the inserted values:
+To return all the inserted values:
+
 
 ```sql
 select * from employee;
 ```
+
 **output**
  
 > 1 Sam  27
@@ -81,7 +85,7 @@ select * from employee;
 > 6 Hassan 45
 
 
-It returns column 'name' of the table employee:
+To return the column 'name' from the table employee:
 
 ```sql
 select name from employee;
@@ -101,9 +105,9 @@ select name from employee;
 > 
 > Hassan
 
-# ORDER BY
+## ORDER BY
 
-It returns a sorted table by the chosen column. It is acceding order by default:
+To return a sorted table by the chosen column. It is ascending order by default:
 
 ```sql
 select * from employee order by age;
@@ -124,55 +128,57 @@ select * from employee order by age;
 > 4 Robert 60
 
 
-It returns a sorted table by the chosen column in decreasing order:
+To return a sorted table by the chosen column in decreasing order:
 
 ```sql
 select * from employee order by age desc;
 ```
 
->Output:
->
-4	Robert	60
->
-6	Hassan	45
->
-5	Darren	30
->
-1	Sam	27
->
-2	Ali	23
->
-3	Rami	20
+**output**
+
+> 4 Robert 60
+> 
+> 6 Hassan 45
+> 
+> 5 Darren 30
+> 
+> 1 Sam 27
+> 
+> 2 Ali 23
+> 
+> 3 Rami 20
 
 
-* WHERE CLASE
+## WHERE CLAUSE
 
-It is an operator to split the table:
+Where is an operator to split the table:
 
 ```sql
 select * from employee where age > 40;
 ```
 
->Output:
->
-4	Robert	60
->
-6	Hassan	45
+**output**
 
-It is sorting the table by a specific column.
+> 4 Robert 60
+> 
+> 6 Hassan 45
 
-Note that, you get an error if you switch the order of the operators i.e 'where' has to come before 'order by'
+Where is sorting the table by a specific column.
+
+Note that, you get an error if you switch the order of the operators i.e 'where' has to come before 'order by'.
 
 ```sql
 select * from employee where age > 40 order by age;
 ```
->output:
->
-6	Hassan	45
->
-4	Robert	60
 
-# Auto-increment
+**output**
+
+
+> 6 Hassan 45
+> 
+> 4 Robert 60
+
+## Auto-increment
 
 Create a table "payroll" with Id key that auto-increment i.e I don't need to worry about entering 'id' every time.
 
