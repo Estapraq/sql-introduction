@@ -1,50 +1,55 @@
-*Follow me on meduim @estapraqkahlilalani
-*, and on tweeter @EstapraqAlani
-*, visit http://www.estapraq.com/
+Follow me on [Medium](https://medium.com/@estapraqkahlilalani) @estapraqkahlilalani, and on [Twitter](https://twitter.com/EstapraqAlani), and visit [my personal site](http://www.estapraq.com/).
 
 
-# LEARN BASIC SQL IN FEW HOURS
+# LEARN BASIC SQL IN A FEW HOURS
 
-This course is for introducing and teaching basic sql in few hours! I hope you fully enjoy to the end it
-as much as I have!
+This course is for introducing and teaching basic sql in few hours! I hope you fully enjoy to the end it as much as I have!
+
+**Table of contents:**
+
+* [CRUD](#crud)
 
 
 ## What is database?
 
-A database is a collection of information that is organized so that it can easily be accessed, managed, and updated. In one view, databases can be classified according to types of content: bibliographic, full-text, numeric, and images. These data
-can come in different format .excel, .csv, .txt files.  
+A database is a collection of information that is organized so that it can easily be accessed, managed, and updated. In one view, databases can be classified according to types of content: bibliographic, full-text, numeric, and images. These data can come in different format excel, csv, txt files.  
 
-## What is sql?
+## What is SQL?
 
-sql (pronounced "ess-que-el") stands for Structured Query Language. SQL is used to communicate with a database. According to ANSI (American National Standards Institute), it is the standard language for relational database management systems.
+SQL (pronounced "ess-que-el") stands for Structured Query Language. SQL is used to communicate with a database. According to ANSI (American National Standards Institute), it is the standard language for relational database management systems.
 
-sql is good and easy as Excel, but it is more flexible in working with multiple databases, and data integrity. sql can be ran from the shell, or from a GUI on the computer. I personally use sequel pro.
+SQL is as easy as Excel, but it is more flexible in working with multiple databases, and data integrity. SQL can be ran from the shell, or from a GUI on the computer. I personally use sequel pro.
 
-* CREATE A TABLE
+#<a name="crud">CRUD</a>
+----
 
-if you try to create a table with an empty parenthesis
+# CREATE A TABLE
+
+If you try to create a table with an empty parenthesis.
 
 ```sql
 create table emplyee()
 ```
 
-You will get an error says
+You will get an error says:
 
-> output:
+```
+in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 1.
+```
 
-> in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 1.
-
-To create a table "employee", you should have an argument in the parenthesis and should look like,
+To create a table "employee", you should have an argument in the parenthesis and should look like:
 
 ```sql
 create table employee(id integer primary key, name text, age integer);
 ```
 
->output:
+**output** 
 
-> id   name     age  
+> id  name  age
 
-* INSERT ELEMENTS
+
+# INSERT ELEMENTS
+
 ```sql
 insert into employee values(1, "Sam", 27);
 insert into employee values(2, "Ali", 23);
@@ -54,73 +59,77 @@ insert into employee values(5, "Darren", 30);
 insert into employee values(6, "Hassan", 45);
 ```
 
-* SELECT : READ FROM A TABLE
+# SELECT: READ FROM A TABLE
 
-It returns all the inserted values
+Returns all the inserted values:
+
 ```sql
-select* from employee;
+select * from employee;
 ```
+**output**
+ 
+> 1 Sam  27
+> 
+> 2	 Ali  23
+> 
+> 3 Rami  20
+> 
+> 4 Robert  60
+> 
+> 5 Darren  30
+> 
+> 6 Hassan 45
 
-> Output:
->
-1	Sam	27
->
-2	Ali	23
->
-3	Rami	20
->
-4	Robert	60
->
-5	Darren	30
->
-6	Hassan	45
 
-
-It returns column 'name' of the table employee
+It returns column 'name' of the table employee:
 
 ```sql
 select name from employee;
 ```
 
-> Output:
->
-Sam
->
-Ali
->
-Rami
->
-Robert
->
-Darren
->
-Hassan
+**output** 
 
-* ORDER BY
+> Sam
+> 
+> Ali
+> 
+> Rami
+> 
+> Robert
+> 
+> Darren
+> 
+> Hassan
 
-It returns a sorted table by the chosen column. It is acceding order by default,
+# ORDER BY
+
+It returns a sorted table by the chosen column. It is acceding order by default:
+
 ```sql
-select* from employee order by age;
+select * from employee order by age;
 ```
->Output:
->
-3	Rami	20
->
-2	Ali	23
->
-1	Sam	27
->
-5	Darren	30
->
-6	Hassan	45
->
-4	Robert	60
+
+**output** 
+
+> 3 Rami 20
+> 
+> 2 Ali 23
+> 
+> 1 Sam 27
+> 
+> 5 Darren 30
+> 
+> 6 Hassan 45
+> 
+> 4 Robert 60
 
 
-It returns a sorted table by the chosen column in decreasing order,
+It returns a sorted table by the chosen column in decreasing order:
+
 ```sql
-select* from employee order by age desc;
+select * from employee order by age desc;
 ```
+
 >Output:
 >
 4	Robert	60
@@ -138,10 +147,12 @@ select* from employee order by age desc;
 
 * WHERE CLASE
 
-It is an operator to split the table,
+It is an operator to split the table:
+
 ```sql
-select* from employee where age> 40;
+select * from employee where age > 40;
 ```
+
 >Output:
 >
 4	Robert	60
@@ -153,7 +164,7 @@ It is sorting the table by a specific column.
 Note that, you get an error if you switch the order of the operators i.e 'where' has to come before 'order by'
 
 ```sql
-select* from employee where age> 40 order by age;
+select * from employee where age > 40 order by age;
 ```
 >output:
 >
@@ -161,13 +172,14 @@ select* from employee where age> 40 order by age;
 >
 4	Robert	60
 
-* Auto-increment
+# Auto-increment
 
 Create a table "payroll" with Id key that auto-increment i.e I don't need to worry about entering 'id' every time.
 
 ```sql
 create table payroll (id integer primary key auto_increment, name text, hours integer, project text);
 ```
+
 > Output:
 
 >  id   name hours   project  
@@ -180,7 +192,7 @@ the output of this code will give an error
 > insert into payroll values ( "Sam", 7.5, "proj1");
 ```
 
-the right code should be,
+The right code should be.
 
 ```sql
 insert into payroll (name, hours, project) values("Sam", 7, "proj1");
@@ -226,7 +238,7 @@ insert into payroll (name, hours, project) values("Nancy", 5.5, "proj2");
 11	Nancy	6	proj2
 
 
-* AGGREGATE FUNCTIONS
+# AGGREGATE FUNCTIONS
 
 They are Sum, Max, Min, or Average function. It returns a number.
 
@@ -242,7 +254,8 @@ select sum(hours) from payroll;
 
 > 60
 
-It returns the max age in the column 'age',
+It returns the max age in the column 'age'.
+
 > select max(age) from employee;
 
 >Output:
@@ -251,7 +264,7 @@ It returns the max age in the column 'age',
 
 > 60
 
-The output is the column 'name', and sum(hours) which is the total of hours for each name,
+The output is the column 'name', and sum(hours) which is the total of hours for each name.
 
 ```sql
 select name,sum(hours) from payroll group by name;
@@ -273,7 +286,7 @@ Robert	4
 >
 Sam	15
 
-* As operator
+# As operator
 
 To change the name of a column, for example change the name of the column sum(hours) to total_hrs.
 
